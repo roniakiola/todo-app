@@ -1,0 +1,20 @@
+@use './variables/colors';
+* {
+  color: colors.$primary-light;
+}
+
+body {
+  background-color: colors.$primary-dark;
+}
+
+button {
+  border: none;
+  background-color: colors.$secondary-dark;
+  padding: 1em;
+  &:hover {
+    background-color: colors.$accent-orange;
+  }
+}
+.--hidden {
+  display: none;
+}

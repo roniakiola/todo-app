@@ -8,6 +8,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <form class="form">
+      <div class="form__wrapper">
+        <div class="form__content--top">
+          <h1 class="form__title">You have 1 task</h1>
+        </div>
+        <div class="form__content--center">
+          <ul class="form__tasks">
+            <div class="task">
+              <div class="task__container">
+                <h1 class="task__title">Go to gym</h1>
+                <p class="task__deadline">10.5.2023</p>
+                <p class="task__status">In progress</p>
+              </div>
+              <button type="button" class="button--edit">Edit task</button>
+            </div>
+          </ul>
+        </div>
+        <div class="form__content--bottom">
+          <button type="button" id="1" class="button--add">Add task</button>
+          <button type="button" class="button--clear">Clear tasks</button>
+        </div>
+      </div>
+    </form>
     <script src="src/js/index.js"></script>
   </body>
 </html>
