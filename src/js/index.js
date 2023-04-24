@@ -128,8 +128,8 @@ const editTask = (btnValue) => {
     taskList[targetId].deadlineVal = deadlineVal;
     taskList[targetId].statusVal = statusVal;
 
-    editForm.reset();
     printTasks();
     targetId = '';
+    editForm.reset();
   });
 };
