@@ -3,14 +3,13 @@
 const taskList = [];
 
 const todoForm = document.querySelector('.todo__form');
-const todoList = document.querySelector('.todo__tasks');
+let todoList = document.querySelector('.todo__tasks');
 const title = document.querySelector('.input-title');
 const deadline = document.querySelector('.input-deadline');
 const status = document.querySelector('.input-status');
 const newTaskBtn = document.querySelector('.button--new');
 
 newTaskBtn.addEventListener('click', () => {
-  // todoForm.classList.add('show');
   todoForm.classList.remove('hidden');
 });
 
@@ -20,8 +19,6 @@ todoForm.addEventListener('submit', (e) => {
   const deadlineVal = deadline.value;
   const statusVal = status.value;
 
-  console.log(titleVal, deadlineVal, statusVal);
-
   const newTask = {
     id: Date.now(),
     titleVal,
@@ -30,45 +27,58 @@ todoForm.addEventListener('submit', (e) => {
   };
 
   taskList.push(newTask);
-  printTask(newTask);
+  printTasks();
+  // todoForm.classList.add('hidden');
   todoForm.reset();
 });
 
-const printTask = (newTask) => {
-  const task = document.createElement('div');
-  task.classList.add('task');
+const printTasks = () => {
+  //clear list of tasks in DOM
+  todoList.innerHTML = '';
+  taskList.forEach((item) => {
+    const task = document.createElement('div');
+    task.classList.add('task');
 
-  const taskContainer = document.createElement('div');
-  taskContainer.classList.add('task__container');
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task__container');
 
-  const taskTitle = document.createElement('h1');
-  taskTitle.innerText = newTask.titleVal;
-  taskTitle.classList.add('task__title');
+    const taskTitle = document.createElement('h1');
+    taskTitle.innerText = item.titleVal;
+    taskTitle.classList.add('task__title');
 
-  const taskDeadline = document.createElement('p');
-  taskDeadline.innerText = newTask.deadlineVal;
-  taskDeadline.classList.add('task__deadline');
+    const taskDeadline = document.createElement('p');
+    taskDeadline.innerText = item.deadlineVal;
+    taskDeadline.classList.add('task__deadline');
 
-  const taskStatus = document.createElement('p');
-  taskStatus.innerText = newTask.statusVal;
-  taskStatus.classList.add('task__status');
+    const taskStatus = document.createElement('p');
+    taskStatus.innerText = item.statusVal;
+    taskStatus.classList.add('task__status');
 
-  const editButton = document.createElement('button');
-  editButton.innerHTML = 'Edit';
-  editButton.classList.add('button--edit');
+    const editButton = document.createElement('button');
+    editButton.innerHTML = 'Edit';
+    editButton.classList.add('button--edit');
 
-  const deleteButton = document.createElement('button');
-  deleteButton.innerHTML = 'Delete';
-  deleteButton.classList.add('button--delete');
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'Delete';
+    deleteButton.value = item.id;
+    deleteButton.classList.add('button--delete');
+    deleteButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      deleteTask(deleteButton.value);
+    });
 
-  console.log(newTask);
-  console.log(newTask.titleVal);
+    task.appendChild(taskContainer);
+    taskContainer.append(taskTitle, taskDeadline, taskStatus);
+    task.appendChild(taskContainer);
+    task.appendChild(editButton);
+    task.appendChild(deleteButton);
 
-  task.appendChild(taskContainer);
-  taskContainer.append(taskTitle, taskDeadline, taskStatus);
-  task.appendChild(taskContainer);
-  task.appendChild(editButton);
-  task.appendChild(deleteButton);
+    todoList.appendChild(task);
+  });
+};
 
-  todoList.appendChild(task);
+const deleteTask = (asd) => {
+  let targetId = taskList.findIndex((item) => item.id == asd);
+  taskList.splice(targetId, 1);
+  printTasks();
 };
