@@ -37,7 +37,9 @@ const printTasks = () => {
     editButton.classList.add('button--edit');
     editButton.addEventListener('click', () => {
       editForm.classList.remove('hidden');
-      editTask(item.id);
+
+      //data-value is set dynamically in editForm to target the right task in taskList
+      editForm.dataset.value = item.id;
     });
 
     const deleteButton = document.createElement('button');
@@ -51,7 +53,6 @@ const printTasks = () => {
     taskContainer.append(taskTitle, taskDeadline, taskStatus);
     task.appendChild(editButton);
     task.appendChild(deleteButton);
-
     todoList.appendChild(task);
   });
   todoTitle.innerHTML = `You have ${taskList.length} tasks`;
@@ -60,25 +61,4 @@ const deleteTask = (itemId) => {
   let targetId = taskList.findIndex((item) => item.id == itemId);
   taskList.splice(targetId, 1);
   printTasks();
-};
-
-const editTask = (itemId) => {
-  let targetId = taskList.findIndex((item) => item.id == itemId);
-
-  editForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const titleVal = editTitle.value;
-    const deadlineVal = editDeadline.value;
-    const statusVal = editStatus.value;
-
-    taskList[targetId].titleVal = titleVal;
-    taskList[targetId].deadlineVal = deadlineVal;
-    taskList[targetId].statusVal = statusVal;
-
-    printTasks();
-    editForm.classList.add('hidden');
-    targetId = '';
-    editForm.reset();
-  });
 };
