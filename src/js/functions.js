@@ -12,7 +12,6 @@ const editDeadline = document.querySelector('.edit__input-deadline');
 const editStatus = document.querySelector('.edit__input-status');
 
 const printTasks = () => {
-  //clear list of tasks in DOM
   todoList.innerHTML = '';
   taskList.forEach((item) => {
     const task = document.createElement('div');
