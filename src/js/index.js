@@ -1,13 +1,6 @@
 'use strict';
 
-let taskList = [
-  {
-    id: 0,
-    titleVal: 'testeri',
-    deadlineVal: '1.2.2003',
-    statusVal: 'In progress',
-  },
-];
+let taskList = [];
 
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -30,3 +23,4 @@ todoForm.addEventListener('submit', (e) => {
   todoForm.classList.add('hidden');
   todoForm.reset();
 });
+printTasks();

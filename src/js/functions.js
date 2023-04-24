@@ -16,7 +16,6 @@ const printTasks = () => {
   todoList.innerHTML = '';
   taskList.forEach((item) => {
     const task = document.createElement('div');
-    task.dataset.value = item.id;
     task.classList.add('task');
 
     const taskContainer = document.createElement('div');
@@ -36,21 +35,17 @@ const printTasks = () => {
 
     const editButton = document.createElement('button');
     editButton.innerHTML = 'Edit';
-    editButton.value = item.id;
     editButton.classList.add('button--edit');
-    editButton.addEventListener('click', (e) => {
-      e.preventDefault();
+    editButton.addEventListener('click', () => {
       editForm.classList.remove('hidden');
-      editTask(editButton.value);
+      editTask(item.id);
     });
 
     const deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'Delete';
-    deleteButton.value = item.id;
     deleteButton.classList.add('button--delete');
-    deleteButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      deleteTask(deleteButton.value);
+    deleteButton.addEventListener('click', () => {
+      deleteTask(item.id);
     });
 
     task.appendChild(taskContainer);
@@ -62,14 +57,14 @@ const printTasks = () => {
   });
   todoTitle.innerHTML = `You have ${taskList.length} tasks`;
 };
-const deleteTask = (btnValue) => {
-  let targetId = taskList.findIndex((item) => item.id == btnValue);
+const deleteTask = (itemId) => {
+  let targetId = taskList.findIndex((item) => item.id == itemId);
   taskList.splice(targetId, 1);
   printTasks();
 };
 
-const editTask = (btnValue) => {
-  let targetId = taskList.findIndex((item) => item.id == btnValue);
+const editTask = (itemId) => {
+  let targetId = taskList.findIndex((item) => item.id == itemId);
 
   editForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -83,6 +78,7 @@ const editTask = (btnValue) => {
     taskList[targetId].statusVal = statusVal;
 
     printTasks();
+    editForm.classList.add('hidden');
     targetId = '';
     editForm.reset();
   });

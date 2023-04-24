@@ -15,4 +15,6 @@ cancelBtn.forEach((btn) => {
 clearAllBtn.addEventListener('click', () => {
   taskList = [];
   printTasks();
+  todoForm.classList.add('hidden');
+  editForm.classList.add('hidden');
 });

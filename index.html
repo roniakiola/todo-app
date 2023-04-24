@@ -14,7 +14,7 @@
       </div>
       <div class="todo__content--center">
         <ul class="todo__tasks">
-          <div class="task">
+          <!-- <div class="task">
             <div class="task__container">
               <h1 class="task__title">Go to gym</h1>
               <p class="task__deadline">10.5.2023</p>
@@ -22,7 +22,7 @@
             </div>
             <button type="button" class="button--edit">Edit</button>
             <button type="button" class="button--delete">Delete task</button>
-          </div>
+          </div> -->
         </ul>
       </div>
       <div class="todo__content--bottom">
@@ -32,6 +32,7 @@
     </div>
     <!-- FORM START -->
     <form class="todo__form hidden">
+      <h2>Add task:</h2>
       <label>
         <input
           type="text"
@@ -61,7 +62,9 @@
       </div>
     </form>
     <!-- FORM END -->
+    <!-- EDIT-FORM START -->
     <form class="edit__form hidden">
+      <h2>Edit task:</h2>
       <label>
         <input
           type="text"
@@ -90,6 +93,7 @@
         <button type="button" class="button--cancel">Cancel</button>
       </div>
     </form>
+    <!-- EDIT-FORM END -->
     <script src="src/js/functions.js"></script>
     <script src="src/js/index.js"></script>
     <script src="src/js/buttons.js"></script>

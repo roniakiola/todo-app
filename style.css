@@ -15,15 +15,10 @@ button:hover {
   background-color: rgb(145, 89, 25);
 }
 
-.todo__form {
+.todo__form,
+.edit__form {
   display: flex;
   flex-direction: column;
-}
-.todo__form.hidden {
-  display: none;
-}
-.todo__form.show {
-  display: block;
 }
 
 .hidden {

@@ -15,15 +15,10 @@ button {
     background-color: colors.$accent-orange;
   }
 }
-.todo__form {
+.todo__form,
+.edit__form {
   display: flex;
   flex-direction: column;
-  &.hidden {
-    display: none;
-  }
-  &.show {
-    display: block;
-  }
 }
 .hidden {
   display: none;
