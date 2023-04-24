@@ -15,7 +15,11 @@ button:hover {
   background-color: rgb(145, 89, 25);
 }
 
-.--hidden {
+.todo__form {
+  display: flex;
+  flex-direction: column;
+}
+.todo__form--hidden {
   display: none;
 }
 

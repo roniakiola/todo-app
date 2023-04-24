@@ -8,29 +8,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form class="form">
-      <div class="form__wrapper">
-        <div class="form__content--top">
-          <h1 class="form__title">You have 1 task</h1>
-        </div>
-        <div class="form__content--center">
-          <ul class="form__tasks">
-            <div class="task">
-              <div class="task__container">
-                <h1 class="task__title">Go to gym</h1>
-                <p class="task__deadline">10.5.2023</p>
-                <p class="task__status">In progress</p>
-              </div>
-              <button type="button" class="button--edit">Edit task</button>
-            </div>
-          </ul>
-        </div>
-        <div class="form__content--bottom">
-          <button type="button" id="1" class="button--add">Add task</button>
-          <button type="button" class="button--clear">Clear tasks</button>
-        </div>
+    <div class="todo">
+      <div class="todo__content--top">
+        <h1 class="todo__title">You have 1 task</h1>
       </div>
-    </form>
+      <div class="todo__content--center">
+        <!-- FORM START -->
+        <form class="todo__form--hidden">
+          <label>
+            <input type="text" class="input-title" placeholder="Task name" />
+          </label>
+          <label>
+            <input
+              type="date"
+              class="input-deadline"
+              placeholder="Taks deadline"
+            />
+          </label>
+          <label>
+            <select>
+              <option value="Not started">Not started</option>
+              <option value="In progress">In progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </label>
+        </form>
+        <!-- FORM END -->
+        <ul class="todo__tasks">
+          <div class="task">
+            <div class="task__container">
+              <h1 class="task__title">Go to gym</h1>
+              <p class="task__deadline">10.5.2023</p>
+              <p class="task__status">In progress</p>
+            </div>
+            <button type="button" class="button--edit">Edit</button>
+            <button type="button" class="button--delete">Delete task</button>
+          </div>
+        </ul>
+      </div>
+      <div class="todo__content--bottom">
+        <button type="button" class="button--add">Add task</button>
+        <button type="button" class="button--clear">Clear tasks</button>
+      </div>
+    </div>
     <script src="src/js/index.js"></script>
   </body>
 </html>
