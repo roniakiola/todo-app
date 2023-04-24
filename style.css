@@ -12,7 +12,7 @@ button {
   padding: 1em;
 }
 button:hover {
-  background-color: rgb(145, 89, 25);
+  background-color: rgb(32, 32, 32);
 }
 
 .todo__form,
@@ -21,8 +21,20 @@ button:hover {
   flex-direction: column;
 }
 
-.hidden {
-  display: none;
+.task {
+  background-color: rgb(145, 89, 25);
+  border: 2px solid;
+  padding: 1em 1em;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input,
+select {
+  padding: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

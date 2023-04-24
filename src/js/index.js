@@ -1,6 +1,25 @@
 'use strict';
 
-let taskList = [];
+let taskList = [
+  {
+    id: 0,
+    titleVal: 'kakkaa',
+    deadlineVal: 'paska',
+    statusVal: 'ei ikinä valmist',
+  },
+  {
+    id: 0,
+    titleVal: 'kakkaa',
+    deadlineVal: 'paska',
+    statusVal: 'ei ikinä valmist',
+  },
+  {
+    id: 0,
+    titleVal: 'kakkaa',
+    deadlineVal: 'paska',
+    statusVal: 'ei ikinä valmist',
+  },
+];
 
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
