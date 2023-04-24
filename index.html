@@ -10,40 +10,9 @@
   <body>
     <div class="todo">
       <div class="todo__content--top">
-        <h1 class="todo__title">You have 1 task</h1>
+        <h1 class="todo__title"></h1>
       </div>
       <div class="todo__content--center">
-        <!-- FORM START -->
-        <form class="todo__form hidden">
-          <label>
-            <input
-              type="text"
-              class="input-title"
-              placeholder="Task name"
-              required
-            />
-          </label>
-          <label>
-            <input
-              type="date"
-              class="input-deadline"
-              placeholder="Taks deadline"
-              required
-            />
-          </label>
-          <label>
-            <select class="input-status" required>
-              <option value="Not started">Not started</option>
-              <option value="In progress">In progress</option>
-              <option value="Done">Done</option>
-            </select>
-          </label>
-          <div class="button-container">
-            <button type="submit" class="button--add">Add task!</button>
-            <button type="button" class="button--cancel">Cancel</button>
-          </div>
-        </form>
-        <!-- FORM END -->
         <ul class="todo__tasks">
           <div class="task">
             <div class="task__container">
@@ -61,6 +30,66 @@
         <button type="button" class="button--clear">Clear all</button>
       </div>
     </div>
+    <!-- FORM START -->
+    <form class="todo__form hidden">
+      <label>
+        <input
+          type="text"
+          class="input-title"
+          placeholder="Task name"
+          required
+        />
+      </label>
+      <label>
+        <input
+          type="date"
+          class="input-deadline"
+          placeholder="Taks deadline"
+          required
+        />
+      </label>
+      <label>
+        <select class="input-status" required>
+          <option value="Not started">Not started</option>
+          <option value="In progress">In progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </label>
+      <div class="button-container">
+        <button type="submit" class="button--add">Add task!</button>
+        <button type="button" class="button--cancel">Cancel</button>
+      </div>
+    </form>
+    <!-- FORM END -->
+    <form class="edit__form hidden">
+      <label>
+        <input
+          type="text"
+          class="edit__input-title"
+          placeholder="Task name"
+          required
+        />
+      </label>
+      <label>
+        <input
+          type="date"
+          class="edit__input-deadline"
+          placeholder="Task deadline"
+          required
+        />
+      </label>
+      <label>
+        <select class="edit__input-status" required>
+          <option value="Not started">Not started</option>
+          <option value="In progress">In progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </label>
+      <div class="button-container">
+        <button type="submit" class="button--add">Edit task</button>
+        <button type="button" class="button--cancel">Cancel</button>
+      </div>
+    </form>
     <script src="src/js/index.js"></script>
   </body>
 </html>

@@ -26,4 +26,8 @@ button:hover {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
