@@ -1,14 +1,43 @@
-# To-do list
+# Introduction
 
-Create a simple application to let users add/remove/edit tasks.
-Tasks should have: title, deadline, status
-![task-list](task_list.png)
-![add-task](add_task.png)
-![edit-task](edit_task.png)
+Simple CRUD Todo-App built with JavaScript and HTML5.
+User is able to create, read, update and delete tasks.
 
-## Requirements
-* `Title` should be unique
-* `Status` is one of 3 options : `["not started", "in progress", "done"]`
-* Form to add/edit tasks should be opened/closed by clicking on a button (see the screenshot)
-* Deploy your project to github page and provide link to your live server in README. Make sure your README file is informative and codes are well-formatted
-* Only minimum style (with SASS) is needed.
+## Table of contents
+
+- [Technologies](#technologies)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+
+## Technologies
+
+- HTML5
+- CSS
+- SASS
+- JavaScript
+
+## Project structure
+```bash
+│   index.html
+│   package.json
+│   README.md
+│   style.css
+│   style.css.map
+│
+└───src
+    ├───js
+    │       buttons.js
+    │       functions.js
+    │       index.js
+    │
+    └───styles
+        │   style.scss
+        │
+        └───variables
+                _colors.scss
+```
+
+## Getting started
+
+Use <code>git clone</code> or <br>
+visit: https://melodious-griffin-54baae.netlify.app/

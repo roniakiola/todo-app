@@ -1,5 +1,7 @@
 'use strict';
 
+let taskList = [];
+
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const titleVal = title.value;
