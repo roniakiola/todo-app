@@ -21,6 +21,10 @@ button:hover {
   flex-direction: column;
 }
 
+.hidden {
+  display: none;
+}
+
 .task {
   background-color: rgb(145, 89, 25);
   border: 2px solid;
