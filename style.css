@@ -19,8 +19,11 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-.todo__form--hidden {
+.todo__form.hidden {
   display: none;
+}
+.todo__form.show {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

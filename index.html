@@ -14,24 +14,34 @@
       </div>
       <div class="todo__content--center">
         <!-- FORM START -->
-        <form class="todo__form--hidden">
+        <form class="todo__form hidden">
           <label>
-            <input type="text" class="input-title" placeholder="Task name" />
+            <input
+              type="text"
+              class="input-title"
+              placeholder="Task name"
+              required
+            />
           </label>
           <label>
             <input
               type="date"
               class="input-deadline"
               placeholder="Taks deadline"
+              required
             />
           </label>
           <label>
-            <select>
+            <select class="input-status" required>
               <option value="Not started">Not started</option>
               <option value="In progress">In progress</option>
               <option value="Done">Done</option>
             </select>
           </label>
+          <div class="button-container">
+            <button type="submit" class="button--add">Add task!</button>
+            <button type="button" class="button--cancel">Cancel</button>
+          </div>
         </form>
         <!-- FORM END -->
         <ul class="todo__tasks">
@@ -47,8 +57,8 @@
         </ul>
       </div>
       <div class="todo__content--bottom">
-        <button type="button" class="button--add">Add task</button>
-        <button type="button" class="button--clear">Clear tasks</button>
+        <button type="button" class="button--new">New task</button>
+        <button type="button" class="button--clear">Clear all</button>
       </div>
     </div>
     <script src="src/js/index.js"></script>
